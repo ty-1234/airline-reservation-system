@@ -14,6 +14,7 @@ Spring Boot 3 / Java 17 starter for a multi-user airline reservation platform wi
 
 - `admin@airline.com` / `Admin@123`
 - `customer@airline.com` / `Customer@123`
+<img width="1911" height="907" alt="image" src="https://github.com/user-attachments/assets/7b0a48ee-06bd-4b77-832c-63d9023b64f4" />
 
 ## Stack
 
