@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights | SkyLedger Reserve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+<header class="site-header">
+    <div class="shell nav-shell">
+        <a href="/" class="brand-mark">
+            <span class="brand-icon">SL</span>
+            <span>
+                <strong>SkyLedger Reserve</strong>
+                <small>Airline reservation platform</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/search.html" class="is-active">Flights</a>
+            <a href="/bookings.html">Manage Booking</a>
+            <a href="/auth.html">Sign In</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span class="session-pill" id="session-status">Guest mode</span>
+            <button id="sign-out" type="button" class="button button-ghost button-small">Sign out</button>
+        </div>
+    </div>
+</header>
+
+<main class="shell section-spacing">
+    <section class="page-intro">
+        <p class="kicker">Flight search</p>
+        <h1 class="page-title">Search routes and review available seats</h1>
+        <p class="section-copy">A standard airline search experience with route filters, live fare cards, and a dedicated seat inventory panel.</p>
+    </section>
+
+    <section class="surface-card search-surface">
+        <form id="search-form" class="form-grid search-grid">
+            <label class="field">
+                <span>Origin</span>
+                <input name="source" placeholder="LHR" required>
+            </label>
+            <label class="field">
+                <span>Destination</span>
+                <input name="destination" placeholder="DXB" required>
+            </label>
+            <label class="field">
+                <span>Travel date</span>
+                <input name="date" type="date" required>
+            </label>
+            <label class="field">
+                <span>Cabin</span>
+                <select name="seatClass">
+                    <option value="ECONOMY">Economy</option>
+                    <option value="BUSINESS">Business</option>
+                    <option value="FIRST">First</option>
+                </select>
+            </label>
+            <label class="field">
+                <span>Passengers</span>
+                <input name="passengers" type="number" min="1" value="1" required>
+            </label>
+            <button type="submit" class="button button-primary">Search flights</button>
+        </form>
+    </section>
+
+    <section class="content-grid">
+        <article class="surface-card">
+            <div class="section-head">
+                <div>
+                    <p class="kicker">Available options</p>
+                    <h2>Flight results</h2>
+                </div>
+            </div>
+            <div id="search-results" class="results-grid">
+                <article class="empty-state">
+                    <h3>Search the network</h3>
+                    <p>Use the form above to display matching flights and fares.</p>
+                </article>
+            </div>
+        </article>
+
+        <article class="surface-card">
+            <div class="section-head">
+                <div>
+                    <p class="kicker">Seat inventory</p>
+                    <h2>Seat lookup</h2>
+                </div>
+            </div>
+
+            <form id="seat-form" class="form-inline">
+                <label class="field">
+                    <span>Flight ID</span>
+                    <input name="flightId" type="number" placeholder="101" required>
+                </label>
+                <button type="submit" class="button button-secondary">Load seats</button>
+            </form>
+
+            <div id="seat-results" class="seat-grid">
+                <article class="empty-state">
+                    <h3>Seat map waiting</h3>
+                    <p>Select a flight to inspect live availability across cabin classes.</p>
+                </article>
+            </div>
+        </article>
+    </section>
+</main>
+
+<aside id="message-box" class="message-box">Ready.</aside>
+
+<script src="/app.js?v=2"></script>
+</body>
+</html>

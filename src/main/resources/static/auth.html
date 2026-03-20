@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | SkyLedger Reserve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+<header class="site-header">
+    <div class="shell nav-shell">
+        <a href="/" class="brand-mark">
+            <span class="brand-icon">SL</span>
+            <span>
+                <strong>SkyLedger Reserve</strong>
+                <small>Airline reservation platform</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/search.html">Flights</a>
+            <a href="/bookings.html">Manage Booking</a>
+            <a href="/auth.html" class="is-active">Sign In</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span class="session-pill" id="session-status">Guest mode</span>
+            <button id="sign-out" type="button" class="button button-ghost button-small">Sign out</button>
+        </div>
+    </div>
+</header>
+
+<main class="shell section-spacing">
+    <section class="page-intro">
+        <p class="kicker">Account access</p>
+        <h1 class="page-title">Sign in or create a traveler profile</h1>
+        <p class="section-copy">Access protected booking actions, retrieve your reservations, and move through the booking flow securely.</p>
+    </section>
+
+    <section class="auth-layout">
+        <article class="surface-card auth-card">
+            <p class="kicker">Create account</p>
+            <h2>Register</h2>
+            <form id="register-form" class="form-grid">
+                <label class="field field-span-2">
+                    <span>Full name</span>
+                    <input name="fullName" placeholder="Amina Rahman" required>
+                </label>
+                <label class="field">
+                    <span>Email</span>
+                    <input name="email" type="email" placeholder="amina@example.com" required>
+                </label>
+                <label class="field">
+                    <span>Phone</span>
+                    <input name="phone" placeholder="+44 7700 900123" required>
+                </label>
+                <label class="field field-span-2">
+                    <span>Password</span>
+                    <input name="password" type="password" placeholder="Minimum 8 characters" required>
+                </label>
+                <button type="submit" class="button button-primary field-span-2">Create traveler account</button>
+            </form>
+        </article>
+
+        <article class="surface-card auth-card">
+            <p class="kicker">Returning traveler</p>
+            <h2>Login</h2>
+            <form id="login-form" class="form-stack">
+                <label class="field">
+                    <span>Email</span>
+                    <input name="email" type="email" placeholder="customer@airline.com" required>
+                </label>
+                <label class="field">
+                    <span>Password</span>
+                    <input name="password" type="password" placeholder="Enter your password" required>
+                </label>
+                <button type="submit" class="button button-secondary">Open secure session</button>
+            </form>
+
+            <div class="notice-card">
+                <p class="kicker">Demo credentials</p>
+                <p><strong>Admin:</strong> admin@airline.com / Admin@123</p>
+                <p><strong>Customer:</strong> customer@airline.com / Customer@123</p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<aside id="message-box" class="message-box">Ready.</aside>
+
+<script src="/app.js?v=2"></script>
+</body>
+</html>

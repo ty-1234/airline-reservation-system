@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Booking | SkyLedger Reserve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+<header class="site-header">
+    <div class="shell nav-shell">
+        <a href="/" class="brand-mark">
+            <span class="brand-icon">SL</span>
+            <span>
+                <strong>SkyLedger Reserve</strong>
+                <small>Airline reservation platform</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/search.html">Flights</a>
+            <a href="/bookings.html" class="is-active">Manage Booking</a>
+            <a href="/auth.html">Sign In</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span class="session-pill" id="session-status">Guest mode</span>
+            <button id="sign-out" type="button" class="button button-ghost button-small">Sign out</button>
+        </div>
+    </div>
+</header>
+
+<main class="shell section-spacing">
+    <section class="page-intro">
+        <p class="kicker">Reservation desk</p>
+        <h1 class="page-title">Hold, confirm, retrieve, and cancel bookings</h1>
+        <p class="section-copy">This page is focused on post-search booking operations, with separate actions for new holds and existing PNRs.</p>
+    </section>
+
+    <section class="booking-layout">
+        <article class="surface-card">
+            <div class="section-head">
+                <div>
+                    <p class="kicker">New reservation</p>
+                    <h2>Create hold</h2>
+                </div>
+            </div>
+
+            <form id="hold-form" class="form-grid">
+                <label class="field">
+                    <span>Flight ID</span>
+                    <input name="flightId" type="number" placeholder="101" required>
+                </label>
+                <label class="field">
+                    <span>Seat</span>
+                    <input name="seatNumber" placeholder="12A" required>
+                </label>
+                <label class="field field-span-2">
+                    <span>Passenger name</span>
+                    <input name="fullName" placeholder="Layla Hassan" required>
+                </label>
+                <label class="field">
+                    <span>Passenger age</span>
+                    <input name="age" type="number" min="0" placeholder="29" required>
+                </label>
+                <label class="field">
+                    <span>Gender</span>
+                    <input name="gender" placeholder="Female" required>
+                </label>
+                <label class="field field-span-2">
+                    <span>Passport number</span>
+                    <input name="passportNumber" placeholder="XK4932048" required>
+                </label>
+                <button type="submit" class="button button-primary field-span-2">Place hold</button>
+            </form>
+        </article>
+
+        <article class="surface-card action-stack">
+            <div>
+                <div class="section-head">
+                    <div>
+                        <p class="kicker">Payment and ticketing</p>
+                        <h2>Confirm booking</h2>
+                    </div>
+                </div>
+
+                <form id="confirm-form" class="form-grid compact-grid">
+                    <label class="field">
+                        <span>PNR</span>
+                        <input name="pnr" placeholder="AR9T6Q2" required>
+                    </label>
+                    <label class="field">
+                        <span>Payment method</span>
+                        <input name="paymentMethod" placeholder="Card" required>
+                    </label>
+                    <label class="field field-span-2">
+                        <span>Payment reference</span>
+                        <input name="paymentReference" placeholder="Optional gateway reference">
+                    </label>
+                    <button type="submit" class="button button-secondary field-span-2">Confirm booking</button>
+                </form>
+            </div>
+
+            <div>
+                <div class="section-head">
+                    <div>
+                        <p class="kicker">Cancel reservation</p>
+                        <h2>Cancel booking</h2>
+                    </div>
+                </div>
+
+                <form id="cancel-form" class="form-inline">
+                    <label class="field">
+                        <span>PNR</span>
+                        <input name="pnr" placeholder="AR9T6Q2" required>
+                    </label>
+                    <button type="submit" class="button button-danger">Cancel booking</button>
+                </form>
+            </div>
+        </article>
+    </section>
+
+    <section class="surface-card">
+        <div class="section-head">
+            <div>
+                <p class="kicker">Booking records</p>
+                <h2>Lookup reservations</h2>
+            </div>
+            <button id="my-bookings" type="button" class="button button-ghost">Load my bookings</button>
+        </div>
+
+        <div class="lookup-row">
+            <form id="lookup-form" class="form-inline">
+                <label class="field">
+                    <span>PNR</span>
+                    <input name="pnr" placeholder="AR9T6Q2" required>
+                </label>
+                <button type="submit" class="button button-primary">Get booking</button>
+            </form>
+        </div>
+
+        <div id="booking-results" class="results-grid">
+            <article class="empty-state">
+                <h3>No booking selected</h3>
+                <p>Retrieve a PNR or load the signed-in traveler's bookings to review the live record.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<aside id="message-box" class="message-box">Ready.</aside>
+
+<script src="/app.js?v=2"></script>
+</body>
+</html>

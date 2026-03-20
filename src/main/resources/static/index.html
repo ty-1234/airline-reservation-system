@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyLedger Reserve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+<header class="site-header">
+    <div class="shell nav-shell">
+        <a href="/" class="brand-mark">
+            <span class="brand-icon">SL</span>
+            <span>
+                <strong>SkyLedger Reserve</strong>
+                <small>Airline reservation platform</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/" class="is-active">Home</a>
+            <a href="/search.html">Flights</a>
+            <a href="/bookings.html">Manage Booking</a>
+            <a href="/auth.html">Sign In</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span class="session-pill" id="session-status">Guest mode</span>
+            <button id="sign-out" type="button" class="button button-ghost button-small">Sign out</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero hero-home">
+        <div class="shell hero-grid">
+            <div class="hero-copy">
+                <p class="kicker">Trusted booking operations</p>
+                <h1>Book flights, manage seats, and handle reservations with a real airline-style flow.</h1>
+                <p class="hero-text">
+                    Search routes, review availability, place protected holds, confirm payment, and manage
+                    bookings from a cleaner multi-page experience designed to feel like a production reservation site.
+                </p>
+                <div class="hero-cta-row">
+                    <a href="/search.html" class="button button-primary">Search flights</a>
+                    <a href="/bookings.html" class="button button-secondary">Manage booking</a>
+                </div>
+            </div>
+
+            <aside class="search-widget surface-card">
+                <div class="widget-head">
+                    <div>
+                        <p class="kicker">Book a trip</p>
+                        <h2>Start your search</h2>
+                    </div>
+                    <span class="hero-badge">Live inventory</span>
+                </div>
+
+                <form id="home-search-form" class="form-grid compact-grid">
+                    <label class="field">
+                        <span>From</span>
+                        <input name="source" placeholder="LHR" required>
+                    </label>
+                    <label class="field">
+                        <span>To</span>
+                        <input name="destination" placeholder="DXB" required>
+                    </label>
+                    <label class="field">
+                        <span>Departure</span>
+                        <input name="date" type="date" required>
+                    </label>
+                    <label class="field">
+                        <span>Cabin</span>
+                        <select name="seatClass">
+                            <option value="ECONOMY">Economy</option>
+                            <option value="BUSINESS">Business</option>
+                            <option value="FIRST">First</option>
+                        </select>
+                    </label>
+                    <label class="field">
+                        <span>Passengers</span>
+                        <input name="passengers" type="number" min="1" value="1" required>
+                    </label>
+                    <button type="submit" class="button button-primary">Find flights</button>
+                </form>
+            </aside>
+        </div>
+    </section>
+
+    <section class="shell section-spacing">
+        <div class="feature-strip">
+            <article class="feature-card">
+                <p class="kicker">Live search</p>
+                <h3>Route and fare discovery</h3>
+                <p>Search by route, date, passengers, and cabin class before moving into seat review.</p>
+            </article>
+            <article class="feature-card">
+                <p class="kicker">Protected inventory</p>
+                <h3>Concurrency-safe seat holds</h3>
+                <p>Reserve seats temporarily so two travelers cannot claim the same inventory at once.</p>
+            </article>
+            <article class="feature-card">
+                <p class="kicker">Reservation desk</p>
+                <h3>PNR lookup and recovery</h3>
+                <p>Load bookings, confirm payment, cancel tickets, and inspect customer records from one place.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="shell section-spacing">
+        <div class="split-showcase">
+            <article class="surface-card showcase-panel">
+                <p class="kicker">Demo access</p>
+                <h2>Test the full customer flow</h2>
+                <div class="credential-list">
+                    <div>
+                        <span>Admin</span>
+                        <strong>admin@airline.com / Admin@123</strong>
+                    </div>
+                    <div>
+                        <span>Customer</span>
+                        <strong>customer@airline.com / Customer@123</strong>
+                    </div>
+                </div>
+                <a href="/auth.html" class="button button-primary">Open sign in</a>
+            </article>
+
+            <article class="surface-card showcase-panel sky-panel">
+                <p class="kicker">Reservation flow</p>
+                <h2>Move through the system in clear steps</h2>
+                <ol class="journey-list">
+                    <li>Search flights on the dedicated flights page.</li>
+                    <li>Review seat inventory and pick a flight.</li>
+                    <li>Place a booking hold with traveler details.</li>
+                    <li>Confirm payment and retrieve the live PNR.</li>
+                </ol>
+                <a href="/search.html" class="button button-secondary">Go to flights</a>
+            </article>
+        </div>
+    </section>
+</main>
+
+<aside id="message-box" class="message-box">Ready.</aside>
+
+<script src="/app.js?v=2"></script>
+</body>
+</html>
